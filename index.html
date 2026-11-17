@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="mainBody">
+
+    <div class="container">
+        <div class="cache-banner" id="cacheIndicator">
+            <span>⚡ Performance Notice:</span> Product assets are currently loaded from the browser cache.
+        </div>
+
+        <header class="store-header">
+            <h1 id="greetingHeading">Welcome to Apex Store!</h1>
+            <div id="userSection" class="user-section">
+            </div>
+        </header>
+
+        <section class="preferences-bar">
+            <div class="pref-group">
+                <label for="fontSelect">Session Font Preference:</label>
+                <select id="fontSelect" onchange="changeFont()">
+                    <option value="Inter, sans-serif">Inter (Modern)</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                </select>
+            </div>
+        </section>
+
+        <main class="store-grid">
+            <section class="card product-catalog">
+                <h2>Product Catalog</h2>
+                <div class="product-item">
+                    <div class="product-info">
+                        <strong>Pro Wireless Laptop</strong>
+                        <span class="price">$999.00</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="addToCart('Pro Wireless Laptop', 999)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-info">
+                        <strong>Noise-Canceling Headphones</strong>
+                        <span class="price">$199.00</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="addToCart('Noise-Canceling Headphones', 199)">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <div class="product-info">
+                        <strong>Mechanical RGB Keyboard</strong>
+                        <span class="price">$49.00</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="addToCart('Mechanical RGB Keyboard', 49)">Add to Cart</button>
+                </div>
+            </section>
+
+            <section class="card shopping-cart">
+                <h2>Your Shopping Cart</h2>
+                <ul id="cartItems" class="cart-list">
+                </ul>
+                <div class="cart-summary">
+                    <div class="total-row">
+                        <span>Total Price:</span>
+                        <strong class="total-price">$<span id="totalPrice">0.00</span></strong>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="btn btn-danger" onclick="clearCart()">Clear Cart & Reset</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
